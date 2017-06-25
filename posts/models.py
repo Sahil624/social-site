@@ -26,7 +26,7 @@ class Post(models.Model):
         self.message_html = misaka.html(self.message)
         super().save(*args,**kwargs)
 
-    def get_absolue_model(self):
+    def get_absolute_url(self):
         return reverse('posts:single',kwargs={'username':self.user.username,'pk':self.pk})
 
     class Meta():

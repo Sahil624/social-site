@@ -5,7 +5,7 @@
   <div class="col-md-4">
     <div class="content">
       {% if user.is_authenticated %}
-          <h2>Welcome back <a href="{% url 'post:for_posts' username=user.username %}"> @{{ user.username }}</a></h2>
+          <h2>Welcome back <a href="{% url 'posts:for_user' username=user.username %}"> @{{ user.username }}</a></h2>
       {% endif %}
 
       <h2>Groups</h2>
@@ -28,7 +28,7 @@
   <div class="col-md-8">
     <div class="list-group">
       {% for group in object_list %}
-          <a href="{% 'groups:single' slug=group.slug %}" class="list-group-item">
+          <a href="{% url 'groups:single' slug=group.slug %}" class="list-group-item">
             <h3 class="title list-group-item-heading">{{ group.name }}</h3>
 
 

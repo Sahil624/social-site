@@ -22,5 +22,7 @@ urlpatterns = [
     url(r'^accounts/',include('accounts.urls',namespace='accounts')),
     url(r'^accounts/',include('django.contrib.auth.urls')),
     url(r'^test/$',views.Testpage.as_view(),name='test'),
-    url(r'^thanks$',views.ThanksPage.as_view(),name='thanks')
+    url(r'^thanks$',views.ThanksPage.as_view(),name='thanks'),
+    url(r'^groups/',include('groups.urls',namespace='groups')),
+    url(r'^posts/',include('posts.urls',namespace='posts')),
 ]
