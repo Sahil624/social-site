@@ -30,7 +30,7 @@ class JoinGroup(LoginRequiredMixin,generic.RedirectView):
         try:
             GroupMember.objects.create(user=self.request.user,group=group)
 
-        except IntegrityError:
+        except:
             messages.warning(self.request,("warning You Are Already A Member"))
 
         else:
