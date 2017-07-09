@@ -6,7 +6,8 @@
     <h5 class="media-heading">
     <span class="username"><a href="{% url 'posts:for_user' username=post.user.username %}">@{{ post.user.username }}</a></span>
 
-    <time class="time"><a href="{% url 'posts:single' username=post.user.username pk=post.pk%}"></a></time>
+    <time class="time">
+      <a href="{% url 'posts:single' username=post.user.username pk=post.pk%}">{{ post.created_at }}</a></time>
     </h5>
 
 
